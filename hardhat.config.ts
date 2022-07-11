@@ -1,12 +1,10 @@
-import "@typechain/hardhat";
-import "@nomiclabs/hardhat-ethers";
 require("dotenv").config();
-import "@nomicfoundation/hardhat-toolbox";
-import "hardhat";
 //import { HardhatUserConfig } from "hardhat/types";
 import { task } from "hardhat/config";
 import { HardhatUserConfig } from "hardhat/types";
 import "hardhat-deploy";
+import "./tasks";
+require("hardhat-deploy-ethers");
 //require("@openzeppelin/hardhat-upgrades");
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -61,7 +59,7 @@ const config: HardhatUserConfig = {
   // },
 
   namedAccounts: {
-    deployer: {
+    deployAccount: {
       default: 0, // wallet address 0, of the mnemonic in .env
     },
   },
